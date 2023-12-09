@@ -110,9 +110,9 @@ printCacheStats()
 {
   printf("Cache Statistics:\n");
   if (icacheSets) {
-    printf("  total I-cache accesses:  %10lu\n", icacheRefs);
-    printf("  total I-cache misses:    %10lu\n", icacheMisses);
-    printf("  total I-cache penalties: %10lu\n", icachePenalties);
+    printf("  total I-cache accesses:  %10llu\n", icacheRefs);
+    printf("  total I-cache misses:    %10llu\n", icacheMisses);
+    printf("  total I-cache penalties: %10llu\n", icachePenalties);
     if (icacheRefs > 0) {
       printf("  I-cache miss rate:   %17.2f%%\n",
           100.0*(double)icacheMisses/(double)icacheRefs);
@@ -124,9 +124,9 @@ printCacheStats()
     }
   }
   if (dcacheSets) {
-    printf("  total D-cache accesses:  %10lu\n", dcacheRefs);
-    printf("  total D-cache misses:    %10lu\n", dcacheMisses);
-    printf("  total D-cache penalties: %10lu\n", dcachePenalties);
+    printf("  total D-cache accesses:  %10llu\n", dcacheRefs);
+    printf("  total D-cache misses:    %10llu\n", dcacheMisses);
+    printf("  total D-cache penalties: %10llu\n", dcachePenalties);
     if (dcacheRefs > 0) {
       printf("  D-cache miss rate:   %17.2f%%\n",
           100.0*(double)dcacheMisses/(double)dcacheRefs);
@@ -138,9 +138,9 @@ printCacheStats()
     }
   }
   if (l2cacheSets) {
-    printf("  total L2-cache accesses: %10lu\n", l2cacheRefs);
-    printf("  total L2-cache misses:   %10lu\n", l2cacheMisses);
-    printf("  total L2-cache penalties:%10lu\n", l2cachePenalties);
+    printf("  total L2-cache accesses: %10llu\n", l2cacheRefs);
+    printf("  total L2-cache misses:   %10llu\n", l2cacheMisses);
+    printf("  total L2-cache penalties:%10llu\n", l2cachePenalties);
     if (l2cacheRefs > 0) {
       printf("  L2-cache miss rate:  %17.2f%%\n",
           100.0*(double)l2cacheMisses/(double)l2cacheRefs);
@@ -152,8 +152,8 @@ printCacheStats()
       printf("  avg L2-cache access time:         -\n");
     }
   }
-  printf("  total compulsory misses: %10lu\n", compulsory_miss);
-  printf("  total other misses:      %10lu\n", other_miss);
+  printf("  total compulsory misses: %10llu\n", compulsory_miss);
+  printf("  total other misses:      %10llu\n", other_miss);
 }
 
 // Set the defaults for the Cache Simulator
@@ -254,8 +254,8 @@ main(int argc, char *argv[])
   printStudentInfo();
   printCacheConfig();
   printCacheStats();
-  printf("Total Memory accesses:  %lu\n", totalRefs);
-  printf("Total Memory penalties: %lu\n", totalPenalties);
+  printf("Total Memory accesses:  %llu\n", totalRefs);
+  printf("Total Memory penalties: %llu\n", totalPenalties);
   if (totalRefs > 0) {
     printf("avg Memory access time: %13.2f cycles\n",
         (double)totalPenalties / totalRefs);
